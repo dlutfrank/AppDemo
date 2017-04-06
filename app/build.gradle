@@ -15,9 +15,9 @@ android {
     signingConfigs {
         release {
             storeFile new File(file(".").getAbsolutePath() + "/../keystore/com.swx.keystore").getAbsoluteFile()
-            storePassword 'swxing#1'
+            storePassword System.getenv("KSTOREPWD")
             keyAlias 'release.key.keystore'
-            keyPassword 'swxing#1'
+            keyPassword System.getenv("KSTOREPWD")
         }
     }
 
