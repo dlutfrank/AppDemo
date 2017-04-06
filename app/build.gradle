@@ -11,10 +11,33 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile new File(file(".").getAbsolutePath() + "/../keystore/com.swx.keystore").getAbsoluteFile()
+            storePassword 'swxing#1'
+            keyAlias 'release.key.keystore'
+            keyPassword 'swxing#1'
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources false
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        Free {
+            applicationIdSuffix '.test'
+            buildConfigField "boolean", "IS_INTERNATIONAL_CHANNEL", "false"
+        }
+        International {
+            buildConfigField "boolean", "IS_INTERNATIONAL_CHANNEL", "true"
         }
     }
 }
