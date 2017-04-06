@@ -5,7 +5,7 @@ Android开发入门
 #### 搭建JDK环境
 * 下载并安装[JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)目前最新的React Native需要1.8的JDK环境  
 
-* 配置Java环境变量（windows）
+* 配置Java环境变量（windows）
   
 为了配置JDK的系统变量环境，我们需要设置三个系统变量，分别是`JAVA_HOME`，`Path`和`CLASSPATH`。下面是这三个变量的设置方法。
 
