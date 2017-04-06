@@ -121,8 +121,8 @@ dependencies {
 
 ```
 dependencies {
-	 compile fileTree(dir: 'libs', include: ['*.jar'])
-	 compile files('libs/foo.jar', 'libs/bar.jar')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/foo.jar', 'libs/bar.jar')
     provided project(path: ':util')
     compile project(path: ':common')
     debugCompile project(path: ':my-library-module', configuration: 'debug')
@@ -168,9 +168,9 @@ debug-release和签名控制
     signingConfigs {
         release {
             storeFile new File(file(".").getAbsolutePath() + "/../keystore/com.swx.keystore").getAbsoluteFile()
-            storePassword 'swxing#1'
+            storePassword System.getenv("KSTOREPWD")
             keyAlias 'release.key.keystore'
-            keyPassword 'swxing#1'
+            keyPassword System.getenv("KSTOREPWD")
         }
     }
 
