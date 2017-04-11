@@ -116,7 +116,6 @@ dependencies {
 }
 ```
 
-
 * 引入本地资源
 
 ```
@@ -132,6 +131,8 @@ dependencies {
 ```
 
 ### 兼容性处理
+
+#### 程序兼容性处理
 
 API Level来进行版本控制
 
@@ -160,7 +161,13 @@ private String getInstance(Bundle bundle) {
 }
 ```
 
-一般通过Build类来进行判断，VERSION包含当前系统版本信息，其中就包含SDK的版本信息，用SDK_INT来表示。[VERSION_CODES](https://developer.android.com/reference/android/os/Build.VERSION_CODES.html)中包含的是一系列版本常量。
+一般通过Build类来进行判断，VERSION包含当前系统版本信息，其中就包含SDK的版本信息，用SDK_INT来表示。[VERSION_CODES](https://developer.android.com/reference/android/os/Build.VERSION_CODES.html)中包含的是一系列版本常量。不同版本的特性可以[看这里](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html)。
+
+#### 打包兼容性处理
+
+Android Studio使用Gradle来进行构建，Gradle Plugin的版本必须和Gradle的版本匹配，不然会构建失败，Gradle Plugin的版本和Gralde版本对应关系参考[Android Plugin for Gradle Release Notes](https://developer.android.com/studio/releases/gradle-plugin.html)。
+
+更多关于Gradle相关信息，参考[Gradle版本管理](http://hucaihua.cn/2016/09/27/Gradle_upgrade/)
 
 ### 打包发布
 
