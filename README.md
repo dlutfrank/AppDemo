@@ -131,6 +131,37 @@ dependencies {
 
 ```
 
+### 兼容性处理
+
+API Level来进行版本控制
+
+```
+android:minSdkVersion="integer"
+android:targetSdkVersion="integer" //默认值同min
+android:maxSdkVersion="integer"
+```
+
+低于min，程序无法安装，低于target，按照兼容模式的主题运行，高于target，不考虑兼容模式
+
+如果minSdkVersion版本低于API函数的版本，则需要使用TargetApi的方式来保证编译通过。同时要使用兼容代码保证在最低版本上运行。
+
+```
+@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
+private String getInstance(Bundle bundle) {
+    String result = null;
+    if (bundle != null) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
+            result = bundle.getString(ID, "99010");
+        } else {
+            result = bundle.getString(ID);
+        }
+    }
+    return result;
+}
+```
+
+一般通过Build类来进行判断，VERSION包含当前系统版本信息，其中就包含SDK的版本信息，用SDK_INT来表示。[VERSION_CODES](https://developer.android.com/reference/android/os/Build.VERSION_CODES.html)中包含的是一系列版本常量。
+
 ### 打包发布
 
 渠道控制
