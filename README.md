@@ -77,6 +77,8 @@ Settings > Developer options，在设备上启用 USB debugging。
 LinerLayout，RelativeLayout，FrameLayout
 
 * View
+ViewGroup View
+gravity layout_gravity
 
 * Intent  
 组件之间传递信息
@@ -232,7 +234,7 @@ debug-release和签名控制
 >
 通过权限共享代码/数据：Android 提供基于签名的权限执行，以便应用可以将功能展示给使用指定证书签署的另一应用。通过使用同一个证书签署多个 APK 并使用基于签名的权限检查功能，您的应用可采用安全的方式共享代码和数据。
 
-####手动签名 
+#### 手动签名 
  
 * 使用 zipalign 优化未签署的 APK：
 
