@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by swx on 12/04/2017.
@@ -37,6 +38,9 @@ public class SecondActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_page_layout);
         init();
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("id", 0);
+        Toast.makeText(this, "id:" + id, Toast.LENGTH_SHORT).show();
     }
 
     private void init() {

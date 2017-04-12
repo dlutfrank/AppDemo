@@ -14,12 +14,6 @@ import android.util.Log;
 
 public class SampleService extends Service {
     public static final String TAG = SampleService.class.getSimpleName();
-    MyBinder myBinder = new MyBinder();
-
-    @Override
-    public IBinder onBind(Intent intent) {
-        return myBinder;
-    }
 
     @Override
     public void onCreate() {
@@ -38,6 +32,14 @@ public class SampleService extends Service {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
     }
+
+    MyBinder myBinder = new MyBinder();
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return myBinder;
+    }
+
 
     public static class MyBinder extends Binder {
         public void doWork() {
