@@ -42,7 +42,10 @@ export ANDROID_SDK=~/Library/Android/sdk
 使用 `source ~/.bash_profile` 可以使环境变量立即生效
 
 ### 搭建工程
+
 打开Android Studio，选择*Start a new Android Studio project*，输入Application name, 点next进入到平台选择页面，选择Phone and Tablet，这里可以看到各个版本的覆盖率，最新版本的SDK功能最丰富，但是覆盖率也最低。如果使用最新版本的React Native(0.44)，需要Android 6.0的SDK(API23)。最原始的版本，需要Android 4.1的SDK(API21)。
+
+[AppDemo](https://github.com/dlutfrank/AppDemo.git)
 
 #### 工程目录结构
 Andorid视图和Project视图之间的切换，一般使用Android视图，在查看一些生成的lib文件时候，会用到Project视图,下面的内容基于Android视图描述。
